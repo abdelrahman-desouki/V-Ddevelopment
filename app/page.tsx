@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import Lenis from "lenis";
 
@@ -92,13 +91,7 @@ export default function Home(): JSX.Element {
 
 
       
-      <div className="flex justify-center items-center mt-10 mb-5">
-        <Image
-          src="/logo1.png"
-          alt="Vanguard Development Logo"
-          className="w-auto h-16 md:h-20 object-contain rounded-md"
-        />
-      </div>
+      
 
       <div style={{ backgroundColor: "gray", height: "40px" }}></div>
     </main>
