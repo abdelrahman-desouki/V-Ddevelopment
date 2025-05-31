@@ -1,0 +1,203 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  width: 100%;
+  background: transparent;
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+
+.logoScrolled {
+  font-size: 1.1rem;
+  transform: scale(0.95);
+}
+
+.menuList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.horizontalMenu {
+  display: flex;
+  justify-content: center;
+  flex: 2;
+  gap: 2rem;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.verticalMenu {
+  position: fixed;
+  top: 3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: transparent;
+  animation: fadeInExact 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.menuItem a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.menuItem a:hover {
+  color: #0070f3;
+}
+
+/* Menu Icon */
+.menuIconFixed {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1001;
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  background: none;
+  border: none;
+}
+
+.menuIconContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuDot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #333;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.menuText {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  margin-left: 5px;
+  z-index: 2;
+  position: relative;
+  background: white;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+/* Dot animations */
+.menuIconAnimated .dot1 {
+  opacity: 1;
+  animation: moveDot1 0.7s forwards;
+}
+
+.menuIconAnimated .dot2 {
+  opacity: 1;
+  animation: moveDot2 0.7s forwards;
+}
+
+.menuIconAnimated .dot3 {
+  opacity: 1;
+  animation: moveDot3 0.7s forwards;
+}
+
+.menuIconAnimated .dot4 {
+  opacity: 1;
+  animation: moveDot4 0.7s forwards;
+}
+
+.menuIconAnimated .menuText {
+  opacity: 1;
+  transition-delay: 0.4s;
+}
+
+/* Animations */
+@keyframes moveDot1 {
+  0% { transform: translate(-40px, -20px); }
+  100% { transform: translate(-10px, 0); }
+}
+
+@keyframes moveDot2 {
+  0% { transform: translate(40px, -20px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes moveDot3 {
+  0% { transform: translate(-40px, 20px); }
+  100% { transform: translate(-5px, 0); }
+}
+
+@keyframes moveDot4 {
+  0% { transform: translate(40px, 20px); }
+  100% { transform: translate(5px, 0); }
+}
+
+@keyframes fadeInExact {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .horizontalMenu {
+    display: none;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .verticalMenu {
+    width: 100%;
+  }
+}
