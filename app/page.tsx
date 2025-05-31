@@ -1,20 +1,13 @@
 "use client";
-
+import Image from "next/image";
 import { useState, useEffect } from "react";
-// لا حاجة لاستيراد Image و Link هنا إذا لم يتم استخدامهما مباشرة في هذا الجزء من الكود
-// import Image from "next/image";
-// import Link from "next/link";
 import Lenis from "lenis";
 
-// افترض أن هذه المكونات إما .tsx أو لها ملفات .d.ts
 import Navbar from './components/Navbar';
 import LineAnimation from "./components/lineanimat";
 import CustomCursor from "./components/CustomCursor";
 import InfoCard from "./components/InfoCard";
-import StickySection from "./components/StickySection";
-import BackgroundVideo from "./components/BackgroundVideo";
 import StickyCardsSection from "./components/StickyCardsSection";
-import Newarc from "./components/newarc";
 import AnimatedSlider from "./components/animatedslider";
 
 
@@ -55,10 +48,6 @@ export default function Home(): JSX.Element {
       <AnimatedSlider />
       <LineAnimation />
 
-     {/* <div className="w-full mt-12 mb-12">
-        {lenisInstance && <BackgroundVideo lenis={lenisInstance} />}
-      </div>
-      <LineAnimation />*/}
 
     {/* السكشن مع النص الثابت والكروت */}
       <StickyCardsSection />
@@ -101,8 +90,10 @@ export default function Home(): JSX.Element {
       </div>
 
 
+
+      
       <div className="flex justify-center items-center mt-10 mb-5">
-        <img
+        <Image
           src="/logo1.png"
           alt="Vanguard Development Logo"
           className="w-auto h-16 md:h-20 object-contain rounded-md"
